@@ -9,6 +9,18 @@ Reliable cell type annotation is a prerequisite for downstream analysis of singl
 
 [![scipy-1.5.4](https://img.shields.io/badge/scipy-1.5.4-yellowgreen)](https://github.com/scipy/scipy) [![torch-1.8.1](https://img.shields.io/badge/torch-1.8.1-orange)](https://github.com/pytorch/pytorch) [![numpy-1.19.2](https://img.shields.io/badge/numpy-1.19.2-red)](https://github.com/numpy/numpy) [![pandas-1.1.5](https://img.shields.io/badge/pandas-1.1.5-lightgrey)](https://github.com/pandas-dev/pandas) [![scanpy-1.7.2](https://img.shields.io/badge/scanpy-1.7.2-blue)](https://github.com/theislab/scanpy) [![scikit__learn-0.24.2](https://img.shields.io/badge/scikit__learn-0.24.2-green)](https://github.com/scikit-learn/scikit-learn) [![transformers-4.6.1](https://img.shields.io/badge/transformers-4.6.1-yellow)](https://github.com/huggingface/transformers)
 
+# Data
+
+The data can be downloaded from this link. If you have any question, please contact fionafyang@tencent@com.
+ 
+https://drive.weixin.qq.com/s?k=AJEAIQdfAAozQt5B8k
+
+# Checkpoint 
+
+The pre-trained model checkpoint can be downloaded from this link. If you have any question, please contact fionafyang@tencent@com.
+
+https://drive.weixin.qq.com/s?k=AJEAIQdfAAoUxhXE7r
+
 # Usage
 
 The test single-cell transcriptomics data file should be pre-processed by first revising gene symbols according to [NCBI Gene database](https://www.ncbi.nlm.nih.gov/gene) updated on Jan. 10, 2020, wherein unmatched genes and duplicated genes will be removed. Then the data should be normalized with the `sc.pp.normalize_total` and `sc.pp.log1p` method in `scanpy` (Python package), detailed in `preprocess.py`.
