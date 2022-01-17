@@ -11,13 +11,13 @@ Reliable cell type annotation is a prerequisite for downstream analysis of singl
 
 # Data
 
-The data can be downloaded from this link. If you have any question, please contact fionafyang@tencent@com.
+The data can be downloaded from this link. If you have any question, please contact fionafyang@tencent.com.
  
 https://drive.weixin.qq.com/s?k=AJEAIQdfAAozQt5B8k
 
 # Checkpoint 
 
-The pre-trained model checkpoint can be downloaded from this link. If you have any question, please contact fionafyang@tencent@com.
+The pre-trained model checkpoint can be downloaded from this link. If you have any question, please contact fionafyang@tencent.com.
 
 https://drive.weixin.qq.com/s?k=AJEAIQdfAAoUxhXE7r
 
