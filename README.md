@@ -11,13 +11,13 @@ Reliable cell type annotation is a prerequisite for downstream analysis of singl
 
 # Data
 
-The data can be downloaded from this link. If you have any question, please contact fionafyang@tencent.com.
+The data can be downloaded from this link. The link is time-limited and you can send request for downloading. If you have any question, please contact fionafyang@tencent.com.
  
 https://drive.weixin.qq.com/s?k=AJEAIQdfAAozQt5B8k
 
 # Checkpoint 
 
-The pre-trained model checkpoint can be downloaded from this link. If you have any question, please contact fionafyang@tencent.com.
+The pre-trained model checkpoint can be downloaded from this link. The link is time-limited and you can send request for downloading. If you have any question, please contact fionafyang@tencent.com.
 
 https://drive.weixin.qq.com/s?k=AJEAIQdfAAoUxhXE7r
 
@@ -25,6 +25,8 @@ https://drive.weixin.qq.com/s?k=AJEAIQdfAAoUxhXE7r
 
 The test single-cell transcriptomics data file should be pre-processed by first revising gene symbols according to [NCBI Gene database](https://www.ncbi.nlm.nih.gov/gene) updated on Jan. 10, 2020, wherein unmatched genes and duplicated genes will be removed. Then the data should be normalized with the `sc.pp.normalize_total` and `sc.pp.log1p` method in `scanpy` (Python package), detailed in `preprocess.py`.
 
+You can download this repo and run the demo task on your computing machine within about 4 hours.  
+ 
 - Fine-tune using pre-trained models
 ```
 python -m torch.distributed.launch --data_path "fine-tune_data_path" --model_path "pretrained_model_path" finetune.py
