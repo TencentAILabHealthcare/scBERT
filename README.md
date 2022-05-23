@@ -42,6 +42,23 @@ python --data_path "test_data_path" --model_path "finetuned_model_path" predict.
 ```
 python -m torch.distributed.launch --data_path "pre-train_data_path" pretrain.py
 ```
+- Guidance for hyperparameter selection
+
+You can select the hyperparameters of the Performer encoder based on your data and task in:
+```
+model = PerformerLM(
+    num_tokens = 7,
+    dim = 200,
+    depth = 6,
+    heads = 10
+)
+```
+Hyperparameter|Description                            | Default | Arbitrary range
+--------------|---------------------------------------| ------- | ----------------   
+num_tokens    |Number of bins in expression embedding |	7       |	[5, 7, 9] 
+dim           |Size of scBERT embedding vector        |	200     |	[100, 200]   
+heads         |Number of attention heads of Performer |	10      |	[8, 10, 20] 
+depth         |Number of Performer encoder layers     |	6       |	[4, 6, 8] 
 
 # Disclaimer
 This tool is for research purpose and not approved for clinical use.
