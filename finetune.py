@@ -229,7 +229,7 @@ for i in range(1, EPOCHS+1):
         with torch.no_grad():
             for index, (data_v, labels_v) in enumerate(val_loader):
                 index += 1
-                data_v, labels_v = data.to(device), labels.to(device)
+                data_v, labels_v = data_v.to(device), labels_v.to(device)
                 logits = model(data_v)
                 loss = loss_fn(logits, labels_v)
                 running_loss += loss.item()
