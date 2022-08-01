@@ -42,6 +42,10 @@ python --data_path "test_data_path" --model_path "finetuned_model_path" predict.
 ```
 python -m torch.distributed.launch --data_path "pre-train_data_path" pretrain.py
 ```
+- Expected output
+
+The expected output of model inference is the cell type of each individual cell.
+
 - Guidance for hyperparameter selection
 
 You can select the hyperparameters of the Performer encoder based on your data and task in:
@@ -60,6 +64,11 @@ dim           |Size of scBERT embedding vector        |	200     |	[100, 200]
 heads         |Number of attention heads of Performer |	10      |	[8, 10, 20] 
 depth         |Number of Performer encoder layers     |	6       |	[4, 6, 8] 
 
+# Time cost
+Typical install time on a "normal" desktop computer is about 30 minutes.
+
+Exptected run time for infering 10,000 cells on a "normal" desktop computer is about 25 minutes.
+
 # Disclaimer
 This tool is for research purpose and not approved for clinical use.
 
@@ -74,5 +83,4 @@ The copyright holder for this project is Tencent AI Lab.
 All rights reserved.
 
 # Citation
-Wang et al., scBERT: a Large-scale Pretrained Deep Langurage Model for Cell Type Annotation of Single-cell RNA-seq Data. [bioRxiv 2021.12.05.471261](https://doi.org/10.1101/2021.12.05.471261)
-
+Yang et al., scBERT as a Large-scale Pretrained Deep Language Model for Cell Type Annotation of Single-cell RNA-seq Data. [bioRxiv 2021.12.05.471261](https://doi.org/10.1101/2021.12.05.471261)
