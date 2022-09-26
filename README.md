@@ -38,10 +38,6 @@ python -m torch.distributed.launch --data_path "fine-tune_data_path" --model_pat
 python --data_path "test_data_path" --model_path "finetuned_model_path" predict.py
 ```
 
-- Pre-train your own models
-```
-python -m torch.distributed.launch --data_path "pre-train_data_path" pretrain.py
-```
 - Expected output
 
 The expected output of model inference is the cell type of each individual cell.
