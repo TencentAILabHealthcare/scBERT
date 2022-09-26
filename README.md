@@ -79,4 +79,4 @@ The copyright holder for this project is Tencent AI Lab.
 All rights reserved.
 
 # Citation
-Yang et al., scBERT as a Large-scale Pretrained Deep Language Model for Cell Type Annotation of Single-cell RNA-seq Data. [bioRxiv 2021.12.05.471261](https://doi.org/10.1101/2021.12.05.471261)
+Yang, F., Wang, W., Wang, F. et al. scBERT as a large-scale pretrained deep language model for cell type annotation of single-cell RNA-seq data. Nat Mach Intell (2022). https://doi.org/10.1038/s42256-022-00534-z
