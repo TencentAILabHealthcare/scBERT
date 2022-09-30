@@ -2,7 +2,7 @@ import scanpy as sc, numpy as np, pandas as pd, anndata as ad
 from scipy import sparse
 
 panglao = sc.read_h5ad('./data/panglao_10000.h5ad')
-data = sc.read_h5ad('./data/raw_data.h5ad')
+data = sc.read_h5ad('./data/your_raw_data.h5ad')
 counts = sparse.lil_matrix((data.X.shape[0],panglao.X.shape[1]),dtype=np.float32)
 ref = panglao.var_names.tolist()
 obj = data.var_names.tolist()
