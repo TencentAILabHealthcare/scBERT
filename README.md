@@ -38,6 +38,13 @@ python -m torch.distributed.launch --data_path "fine-tune_data_path" --model_pat
 python --data_path "test_data_path" --model_path "finetuned_model_path" predict.py
 ```
 
+- Detection of novel cell type
+
+The detection of novel cell type can be done by thresholding the predicted probabilities. (Default threshold=0.5)
+```
+python --data_path "test_data_path" --model_path "finetuned_model_path" --novel_type True --unassign_thres "custom_threshold" predict.py  
+```
+
 - Expected output
 
 The expected output of model inference is the cell type of each individual cell.
@@ -59,6 +66,7 @@ num_tokens    |Number of bins in expression embedding |	7       |	[5, 7, 9]
 dim           |Size of scBERT embedding vector        |	200     |	[100, 200]   
 heads         |Number of attention heads of Performer |	10      |	[8, 10, 20] 
 depth         |Number of Performer encoder layers     |	6       |	[4, 6, 8] 
+
 
 # Time cost
 Typical install time on a "normal" desktop computer is about 30 minutes.
