@@ -32,6 +32,8 @@ parser.add_argument("--pos_embed", type=bool, default=True, help='Using Gene2vec
 parser.add_argument("--data_path", type=str, default='./data/Zheng68K.h5ad', help='Path of data for predicting.')
 parser.add_argument("--model_path", type=str, default='./finetuned.pth', help='Path of finetuned model.')
 
+args = parser.parse_args()
+
 SEED = args.seed
 EPOCHS = args.epoch
 SEQ_LEN = args.gene_num + 1
