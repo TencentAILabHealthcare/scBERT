@@ -20,6 +20,7 @@ from performer_pytorch import PerformerLM
 import scanpy as sc
 import anndata as ad
 from utils import *
+import pickle as pkl
 
 parser = argparse.ArgumentParser()
 parser.add_argument("--bin_num", type=int, default=5, help='Number of bins.')
@@ -73,7 +74,12 @@ class Identity(torch.nn.Module):
         return x
 
 data = sc.read_h5ad(args.data_path)
-label_dict, label = np.unique(np.array(data.obs['celltype']), return_inverse=True)
+#load the label stored during the fine-tune stage
+with open('label_dict', 'rb') as fp:
+    label_dict = pkl.load(fp)
+with open('label', 'rb') as fp:
+    label = pkl.load(fp)
+
 class_num = np.unique(label, return_counts=True)[1].tolist()
 class_weight = torch.tensor([(1 - (x / sum(class_num))) ** 2 for x in class_num])
 label = torch.from_numpy(label)

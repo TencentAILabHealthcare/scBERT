@@ -31,12 +31,16 @@ You can download this repo and run the demo task on your computing machine withi
 - Fine-tune using pre-trained models
 ```
 python -m torch.distributed.launch --data_path "fine-tune_data_path" --model_path "pretrained_model_path" finetune.py
+#The cell type information is stored in 'label' and 'label_dict' files.
 ```
+
 
 - Predict using fine-tuned models
 ```
 python --data_path "test_data_path" --model_path "finetuned_model_path" predict.py
+#The cell type information will be loaded frome 'label' and 'label_dict' files.
 ```
+
 
 - Detection of novel cell type
 
