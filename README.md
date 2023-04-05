@@ -27,17 +27,18 @@ https://drive.weixin.qq.com/s?k=AJEAIQdfAAoUxhXE7r
 The test single-cell transcriptomics data file should be pre-processed by first revising gene symbols according to [NCBI Gene database](https://www.ncbi.nlm.nih.gov/gene) updated on Jan. 10, 2020, wherein unmatched genes and duplicated genes will be removed. Then the data should be normalized with the `sc.pp.normalize_total` and `sc.pp.log1p` method in `scanpy` (Python package), detailed in `preprocess.py`.
 
 You can download this repo and run the demo task on your computing machine within about 4 hours.  
- 
+It expects the gene2vec embedding `gene2vec_16906.npy` in a `data` folder parallel to the `scBERT` repository (e.g., `../data/gene2vec_16906.npy` if your current working directory is ``scBERT`). 
+
 - Fine-tune using pre-trained models
 ```
-python -m torch.distributed.launch --data_path "fine-tune_data_path" --model_path "pretrained_model_path" finetune.py
+python -m torch.distributed.launch finetune.py --data_path "fine-tune_data_path" --model_path "pretrained_model_path"
 #The cell type information is stored in 'label' and 'label_dict' files.
 ```
 
 
 - Predict using fine-tuned models
 ```
-python --data_path "test_data_path" --model_path "finetuned_model_path" predict.py
+python predict.py --data_path "test_data_path" --model_path "finetuned_model_path"
 #The cell type information will be loaded frome 'label' and 'label_dict' files.
 ```
 
@@ -46,7 +47,7 @@ python --data_path "test_data_path" --model_path "finetuned_model_path" predict.
 
 The detection of novel cell type can be done by thresholding the predicted probabilities. (Default threshold=0.5)
 ```
-python --data_path "test_data_path" --model_path "finetuned_model_path" --novel_type True --unassign_thres "custom_threshold" predict.py  
+python predict.py --data_path "test_data_path" --model_path "finetuned_model_path" --novel_type True --unassign_thres "custom_threshold 
 ```
 
 - Expected output
