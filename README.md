@@ -30,14 +30,14 @@ You can download this repo and run the demo task on your computing machine withi
  
 - Fine-tune using pre-trained models
 ```
-python -m torch.distributed.launch --data_path "fine-tune_data_path" --model_path "pretrained_model_path" finetune.py
+python -m torch.distributed.launch finetune.py --data_path "fine-tune_data_path" --model_path "pretrained_model_path"
 #The cell type information is stored in 'label' and 'label_dict' files.
 ```
 
 
 - Predict using fine-tuned models
 ```
-python --data_path "test_data_path" --model_path "finetuned_model_path" predict.py
+python predict.py --data_path "test_data_path" --model_path "finetuned_model_path"
 #The cell type information will be loaded frome 'label' and 'label_dict' files.
 ```
 
@@ -46,7 +46,7 @@ python --data_path "test_data_path" --model_path "finetuned_model_path" predict.
 
 The detection of novel cell type can be done by thresholding the predicted probabilities. (Default threshold=0.5)
 ```
-python --data_path "test_data_path" --model_path "finetuned_model_path" --novel_type True --unassign_thres "custom_threshold" predict.py  
+python predict.py --data_path "test_data_path" --model_path "finetuned_model_path" --novel_type True --unassign_thres "custom_threshold"  
 ```
 
 - Expected output
