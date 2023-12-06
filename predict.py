@@ -117,7 +117,7 @@ with torch.no_grad():
         pred_logits = model(full_seq)
         softmax = nn.Softmax(dim=-1)
         pred_prob = softmax(pred_logits)
-        pred_final = pred_prob.argmax(dim=-1)
+        pred_final = pred_prob.argmax(dim=-1).item()
         if np.amax(np.array(pred_prob.cpu()), axis=-1) < UNASSIGN_THRES:
             novel_indices.append(index)
         pred_finals.append(pred_final)
