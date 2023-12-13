@@ -26,7 +26,7 @@ from torch.nn.modules.loss import _WeightedLoss
 
 def seed_all(seed_value, cuda_deterministic=False):
     """
-    设置所有的随机种子
+    set all random seeds
     """
     random.seed(seed_value)
     os.environ['PYTHONHASHSEED'] = str(seed_value)
@@ -46,7 +46,7 @@ def seed_all(seed_value, cuda_deterministic=False):
 
 def set_log(logfileName, rank=-1):
     """
-    master节点保存所有log，其他节点只保存warning及error
+    save log
     """
     log_file_folder = os.path.dirname(logfileName)
     time_now = datetime.datetime.now()
@@ -67,7 +67,7 @@ def set_log(logfileName, rank=-1):
 
 def save_ckpt(epoch, model, optimizer, scheduler, losses, model_name, ckpt_folder):
     """
-    保存模型checkpoint
+    save checkpoint
     """
     if not os.path.exists(ckpt_folder):
         os.makedirs(ckpt_folder)
@@ -84,7 +84,7 @@ def save_ckpt(epoch, model, optimizer, scheduler, losses, model_name, ckpt_folde
 
 def save_simple_ckpt(model, model_name, ckpt_folder):
     """
-    保存模型checkpoint
+    save checkpoint
     """
     if not os.path.exists(ckpt_folder):
         os.makedirs(ckpt_folder)
@@ -97,7 +97,7 @@ def save_simple_ckpt(model, model_name, ckpt_folder):
 
 def save_best_ckpt(epoch, model, optimizer, scheduler, losses, model_name, ckpt_folder):
     """
-    保存模型checkpoint
+    save checkpoint
     """
     if not os.path.exists(ckpt_folder):
         os.makedirs(ckpt_folder)
